@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  course
-//
-//  Created by 1234 on 5/28/18.
-//  Copyright © 2018 1234. All rights reserved.
-//
 
 import UIKit
 
@@ -12,14 +5,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        view.backgroundColor = .white
+        
+        let button1 = UIButton()
+        button1.bounds =  CGRect(x: 0, y: 0, width: 100, height: 100)
+        button1.center = view.center
+        button1.setTitle("button", for: .normal)
+        button1.backgroundColor = .orange
+        button1.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        
+        view.addSubview(button1)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
+    @objc func buttonPressed(sender: UIButton){
+    sender.backgroundColor = UIColor.black
+    }
 
 }
 
