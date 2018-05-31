@@ -5,12 +5,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        let button = UIButton()
-        button.bounds = CGRect(x: 0, y: 0, width: 100, height: 100)
+        let button = UIButton(type: .system)
+        button.bounds = CGRect(x: 0, y: 0, width: 200, height: 80)
         button.backgroundColor = .orange
         view.addSubview(button)
         
-        
+        button.center = view.center
+        button.setTitle("button", for: .normal)
 
         
 
