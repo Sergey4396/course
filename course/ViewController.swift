@@ -1,7 +1,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     var button = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -12,33 +11,18 @@ class ViewController: UIViewController {
         view.addSubview(button)
         button.center = view.center
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        let atrString = NSMutableAttributedString.init(string: "Swift UIButton")
-        atrString.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange.init(location: 2, length: 3))
-        atrString.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange.init(location: 6, length: 3))
-        atrString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 25), range: NSRange.init(location: 0, length: 5))
-        atrString.addAttribute(.underlineStyle, value: 1, range: NSRange.init(location: 0, length: 5))
-        button.setAttributedTitle(atrString, for: .normal)
+        button.setTitle("button", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
+        button.setTitleColor(.yellow, for: .normal)
         
-        let PressedatrString = NSMutableAttributedString.init(string: "Pressed UIButton")
-        PressedatrString.addAttribute(.foregroundColor, value: UIColor.red, range: NSRange.init(location: 4, length: 4))
-        PressedatrString.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange.init(location: 8, length: 3))
-        PressedatrString.addAttribute(.font, value: UIFont.boldSystemFont(ofSize: 25), range: NSRange.init(location: 0, length: 8))
-        PressedatrString.addAttribute(.underlineStyle, value: 1, range: NSRange.init(location: 0, length: 8))
-        button.setAttributedTitle(PressedatrString, for: .highlighted)
-        
-        button.attributedTitle(for: .normal)
+        button.setTitleShadowColor(.gray, for: .normal)
+        button.titleLabel?.shadowOffset = CGSize(width: 3, height: 3)
+        button.reversesTitleShadowWhenHighlighted = true
+
 
     }
     @objc func buttonPressed(sender: UIButton){
         print("button pressed")
-        
-        button.setAttributedTitle(button.attributedTitle(for: .normal), for: .highlighted)
-
-        
-
     }
-    
-
-
 }
 
