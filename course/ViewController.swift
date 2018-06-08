@@ -10,13 +10,15 @@ class ViewController: UIViewController {
 //        button.backgroundColor = .orange
         button.center = view.center
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        button.setTitle("button", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-        button.titleLabel?.adjustsFontSizeToFitWidth = true
-        button.titleLabel?.backgroundColor = .yellow
         
-        let img = #imageLiteral(resourceName: "imgNew")
-        button.setImage(img, for: .normal)
+        
+//        button.setTitle("button", for: .normal)
+//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+//        button.titleLabel?.adjustsFontSizeToFitWidth = true
+//        button.titleLabel?.backgroundColor = .yellow
+//
+//        let img = #imageLiteral(resourceName: "imgNew")
+//        button.setImage(img, for: .normal)
         
         let backGroundImage = UIImage(named: "backGround")
        // let img2 = UIImage(named: "imgButtonActive")
@@ -53,8 +55,8 @@ class ViewController: UIViewController {
 }
 
 
-class MyShrinkingButton: UIButton {
-
+//class MyShrinkingButton: UIButton {
+//
 //    override func titleRect(forContentRect bounds: CGRect) -> CGRect {
 //        var result = super.titleRect(forContentRect:bounds)
 //        if self.isHighlighted {
@@ -72,19 +74,19 @@ class MyShrinkingButton: UIButton {
 //        }
 //        return result
 //    }
-
-    override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
-        var result = CGRect(x: 0, y: 0, width: 200, height: 80)
-        if self.isHighlighted {
-            result = CGRect(x: result.minX, y: result.minY, width: 160, height: 70)
-
-        }
-        return result
-    }
-    
-    
-    
-}
+//
+//    override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
+//        var result = CGRect(x: 0, y: 0, width: 200, height: 80)
+//        if self.isHighlighted {
+//            result = CGRect(x: result.minX, y: result.minY, width: 160, height: 70)
+//
+//        }
+//        return result
+//    }
+//
+//
+//
+//}
 
 //
 //extension CGRect {
@@ -137,23 +139,23 @@ class MyShrinkingButton: UIButton {
 
 
 
-//extension CGSize {
-//    func sizeByDelta(dw:CGFloat, dh:CGFloat) -> CGSize {
-//        return CGSize(width:self.width + dw, height:self.height + dh)
-//    }
-//}
-//class MyShrinkingButton: UIButton {
-//    override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
-//        var result = super.backgroundRect(forBounds:bounds)
-//        if self.isHighlighted {
-//            result = result.insetBy(dx: 3, dy: 3)
-//        }
-//        return result
-//    }
-//    override var intrinsicContentSize : CGSize {
-//        return super.intrinsicContentSize.sizeByDelta(dw:25, dh: 20)
-//    }
-//}
+extension CGSize {
+    func sizeByDelta(dw:CGFloat, dh:CGFloat) -> CGSize {
+        return CGSize(width:self.width + dw, height:self.height + dh)
+    }
+}
+class MyShrinkingButton: UIButton {
+    override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
+        var result = super.backgroundRect(forBounds:bounds)
+        if self.isHighlighted {
+            result = result.insetBy(dx: 3, dy: 3)
+        }
+        return result
+    }
+    override var intrinsicContentSize : CGSize {
+        return super.intrinsicContentSize.sizeByDelta(dw:25, dh: 20)
+    }
+}
 
 
 
