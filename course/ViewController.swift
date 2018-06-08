@@ -12,9 +12,9 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
         
-//        button.setTitle("button", for: .normal)
-//        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-//        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.setTitle("button", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
 //        button.titleLabel?.backgroundColor = .yellow
 //
 //        let img = #imageLiteral(resourceName: "imgNew")
@@ -145,6 +145,7 @@ extension CGSize {
     }
 }
 class MyShrinkingButton: UIButton {
+  
     override func backgroundRect(forBounds bounds: CGRect) -> CGRect {
         var result = super.backgroundRect(forBounds:bounds)
         if self.isHighlighted {
@@ -155,6 +156,15 @@ class MyShrinkingButton: UIButton {
     override var intrinsicContentSize : CGSize {
         return super.intrinsicContentSize.sizeByDelta(dw:25, dh: 20)
     }
+    
+    override func titleRect(forContentRect bounds: CGRect) -> CGRect {
+        var result = super.titleRect(forContentRect:bounds)
+        if self.isHighlighted {
+            result = result.insetBy(dx: 3, dy: 3)
+        }
+        return result
+    }
+
 }
 
 
