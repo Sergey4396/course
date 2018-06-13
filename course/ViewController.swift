@@ -9,14 +9,13 @@ class ViewController: UIViewController {
         button.backgroundColor = .lightGray
         button.center = view.center
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        let img1 = UIImage(named: "imgNew")
-        let img2 = UIImage(named: "imgNew")
-        button.setImage(img1, for: .normal)
-        button.setImage(img2, for: .highlighted)
-        button.setTitle("Title", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 55)
-        button.setTitleColor(.red, for: .normal)
-
+        let image1 = UIImage(named: "imgButton")
+//        let image2 = UIImage(named: "imgButtonActive")
+        button.setBackgroundImage(image1, for: .normal)
+//        button.setBackgroundImage(image2, for: .highlighted)
+        button.adjustsImageWhenHighlighted = true
+        button.adjustsImageWhenDisabled = true
+        button.showsTouchWhenHighlighted = false
         view.addSubview(button)
    
     }
