@@ -10,7 +10,6 @@ class ViewController: UIViewController {
         button.center = view.center
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         button.setTitle("Button", for: .normal)
-
         view.addSubview(button)
     }
     @objc func buttonPressed(sender: UIButton){
