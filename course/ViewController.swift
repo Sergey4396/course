@@ -11,12 +11,11 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         let image1 = UIImage(named: "imgButton")
 //        let image2 = UIImage(named: "imgButtonActive")
-        button.setBackgroundImage(image1, for: .normal)
+        button.setImage(image1, for: .normal)
 //        button.setBackgroundImage(image2, for: .highlighted)
-        button.adjustsImageWhenHighlighted = true
-        button.adjustsImageWhenDisabled = true
-        button.showsTouchWhenHighlighted = false
-        view.addSubview(button)   
+
+        view.addSubview(button)
+
     }
     @objc func buttonPressed(sender: UIButton){
         print("button pressed")
